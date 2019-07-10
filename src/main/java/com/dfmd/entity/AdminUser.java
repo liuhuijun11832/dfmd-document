@@ -2,86 +2,197 @@ package com.dfmd.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.*;
 
+@Table(name = "admin_user")
 public class AdminUser implements Serializable {
+    /**
+     * 主键
+     */
+    @GeneratedValue(generator = "JDBC")
     private Integer id;
 
+    /**
+     * 手机号码
+     */
     private String mobile;
 
+    /**
+     * 密码
+     */
     private String password;
 
+    /**
+     * 昵称
+     */
+    @Column(name = "nick_name")
     private String nickName;
 
+    /**
+     * 头像
+     */
+    @Column(name = "head_picture")
     private String headPicture;
 
+    /**
+     * 启用状态 0-未启用 1-启用
+     */
     private Integer status;
 
+    /**
+     * 创建时间
+     */
+    @Column(name = "create_time")
     private Date createTime;
 
+    /**
+     * 更新时间
+     */
+    @Column(name = "update_time")
     private Date updateTime;
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * 获取主键
+     *
+     * @return id - 主键
+     */
     public Integer getId() {
         return id;
     }
 
+    /**
+     * 设置主键
+     *
+     * @param id 主键
+     */
     public void setId(Integer id) {
         this.id = id;
     }
 
+    /**
+     * 获取手机号码
+     *
+     * @return mobile - 手机号码
+     */
     public String getMobile() {
         return mobile;
     }
 
+    /**
+     * 设置手机号码
+     *
+     * @param mobile 手机号码
+     */
     public void setMobile(String mobile) {
         this.mobile = mobile == null ? null : mobile.trim();
     }
 
+    /**
+     * 获取密码
+     *
+     * @return password - 密码
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * 设置密码
+     *
+     * @param password 密码
+     */
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
     }
 
+    /**
+     * 获取昵称
+     *
+     * @return nick_name - 昵称
+     */
     public String getNickName() {
         return nickName;
     }
 
+    /**
+     * 设置昵称
+     *
+     * @param nickName 昵称
+     */
     public void setNickName(String nickName) {
         this.nickName = nickName == null ? null : nickName.trim();
     }
 
+    /**
+     * 获取头像
+     *
+     * @return head_picture - 头像
+     */
     public String getHeadPicture() {
         return headPicture;
     }
 
+    /**
+     * 设置头像
+     *
+     * @param headPicture 头像
+     */
     public void setHeadPicture(String headPicture) {
         this.headPicture = headPicture == null ? null : headPicture.trim();
     }
 
+    /**
+     * 获取启用状态 0-未启用 1-启用
+     *
+     * @return status - 启用状态 0-未启用 1-启用
+     */
     public Integer getStatus() {
         return status;
     }
 
+    /**
+     * 设置启用状态 0-未启用 1-启用
+     *
+     * @param status 启用状态 0-未启用 1-启用
+     */
     public void setStatus(Integer status) {
         this.status = status;
     }
 
+    /**
+     * 获取创建时间
+     *
+     * @return create_time - 创建时间
+     */
     public Date getCreateTime() {
         return createTime;
     }
 
+    /**
+     * 设置创建时间
+     *
+     * @param createTime 创建时间
+     */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
+    /**
+     * 获取更新时间
+     *
+     * @return update_time - 更新时间
+     */
     public Date getUpdateTime() {
         return updateTime;
     }
 
+    /**
+     * 设置更新时间
+     *
+     * @param updateTime 更新时间
+     */
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
