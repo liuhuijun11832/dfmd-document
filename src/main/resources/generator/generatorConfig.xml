@@ -22,7 +22,8 @@
         </commentGenerator>
         <!--数据库链接URL，用户名、密码 -->
         <jdbcConnection driverClass="${spring.datasource.driver-class-name}"
-                        connectionURL="jdbc:mysql://39.97.228.206:3306/archives_administration?useSSL=false" userId="${spring.datasource.username}" password="${spring.datasource.password}">
+                        connectionURL="jdbc:mysql://39.97.228.206:3306/archives_administration?useSSL=false"
+                        userId="${spring.datasource.username}" password="${spring.datasource.password}">
         </jdbcConnection>
         <javaTypeResolver>
             <!-- This property is used to specify whether MyBatis Generator should
@@ -54,7 +55,14 @@
         <!--        <generatedKey column="id" sqlStatement="JDBC"/>-->
         <!--    </table>-->
 
-        <table schema="archives_administration" tableName="admin_user" domainObjectName="AdminUser"
+<!--        <table schema="adminUser" tableName="admin_user"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false"-->
+<!--               enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               selectByExampleQueryId="false">-->
+<!--            <generatedKey column="id" sqlStatement="JDBC"/>-->
+<!--        </table>-->
+
+        <table  tableName="admin_resource" domainObjectName="AdminResource"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">

@@ -13,7 +13,7 @@ public class AdminUser implements Serializable {
     private Integer id;
 
     /**
-     * 手机号码
+     * 用户名
      */
     private String username;
 
@@ -31,8 +31,8 @@ public class AdminUser implements Serializable {
     /**
      * 头像
      */
-    @Column(name = "head_picture")
-    private String headPicture;
+    @Column(name = "head_img")
+    private String headImg;
 
     /**
      * 启用状态 0-未启用 1-启用
@@ -83,9 +83,9 @@ public class AdminUser implements Serializable {
     /**
      * 设置手机号码
      *
-     * @param username 手机号码
+     * @param userna 手机号码
      */
-    public void setUsername(String username) {
+    public void setUsername(String userna) {
         this.username = username == null ? null : username.trim();
     }
 
@@ -130,17 +130,17 @@ public class AdminUser implements Serializable {
      *
      * @return head_picture - 头像
      */
-    public String getHeadPicture() {
-        return headPicture;
+    public String getHeadImg() {
+        return headImg;
     }
 
     /**
      * 设置头像
      *
-     * @param headPicture 头像
+     * @param headImg 头像
      */
-    public void setHeadPicture(String headPicture) {
-        this.headPicture = headPicture == null ? null : headPicture.trim();
+    public void setHeadImg(String headImg) {
+        this.headImg = headImg == null ? null : headImg.trim();
     }
 
     /**
@@ -213,7 +213,7 @@ public class AdminUser implements Serializable {
             && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
             && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
             && (this.getNickName() == null ? other.getNickName() == null : this.getNickName().equals(other.getNickName()))
-            && (this.getHeadPicture() == null ? other.getHeadPicture() == null : this.getHeadPicture().equals(other.getHeadPicture()))
+            && (this.getHeadImg() == null ? other.getHeadImg() == null : this.getHeadImg().equals(other.getHeadImg()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
             && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()));
@@ -227,7 +227,7 @@ public class AdminUser implements Serializable {
         result = prime * result + ((getUsername() == null) ? 0 : getUsername().hashCode());
         result = prime * result + ((getPassword() == null) ? 0 : getPassword().hashCode());
         result = prime * result + ((getNickName() == null) ? 0 : getNickName().hashCode());
-        result = prime * result + ((getHeadPicture() == null) ? 0 : getHeadPicture().hashCode());
+        result = prime * result + ((getHeadImg() == null) ? 0 : getHeadImg().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
@@ -241,10 +241,10 @@ public class AdminUser implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", mobile=").append(username);
+        sb.append(", userna=").append(username);
         sb.append(", password=").append(password);
         sb.append(", nickName=").append(nickName);
-        sb.append(", headPicture=").append(headPicture);
+        sb.append(", headPicture=").append(headImg);
         sb.append(", status=").append(status);
         sb.append(", createTime=").append(createTime);
         sb.append(", updateTime=").append(updateTime);

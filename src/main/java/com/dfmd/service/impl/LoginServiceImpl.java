@@ -24,6 +24,6 @@ public class LoginServiceImpl implements LoginService {
         log.info("进入service");
         AdminUser adminUser = new AdminUser();
         adminUser.setId(1);
-        return adminUserMapper.selectByPrimaryKey(adminUser);
+        return adminUserMapper.selectOne(adminUser);
     }
 }
