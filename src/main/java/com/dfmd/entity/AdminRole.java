@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "admin_user")
-public class AdminUser implements Serializable {
+@Table(name = "admin_role")
+public class AdminRole implements Serializable {
     /**
      * 主键
      */
@@ -13,26 +13,19 @@ public class AdminUser implements Serializable {
     private Integer id;
 
     /**
-     * 手机号码
+     * 角色名称
      */
-    private String username;
+    private String name;
 
     /**
-     * 密码
+     * 角色代码
      */
-    private String password;
+    private String code;
 
     /**
-     * 昵称
+     * 角色描述
      */
-    @Column(name = "nick_name")
-    private String nickName;
-
-    /**
-     * 头像
-     */
-    @Column(name = "head_picture")
-    private String headPicture;
+    private String description;
 
     /**
      * 启用状态 0-未启用 1-启用
@@ -72,75 +65,57 @@ public class AdminUser implements Serializable {
     }
 
     /**
-     * 获取手机号码
+     * 获取角色名称
      *
-     * @return username - 手机号码
+     * @return name - 角色名称
      */
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
     /**
-     * 设置手机号码
+     * 设置角色名称
      *
-     * @param username 手机号码
+     * @param name 角色名称
      */
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
     /**
-     * 获取密码
+     * 获取角色代码
      *
-     * @return password - 密码
+     * @return code - 角色代码
      */
-    public String getPassword() {
-        return password;
+    public String getCode() {
+        return code;
     }
 
     /**
-     * 设置密码
+     * 设置角色代码
      *
-     * @param password 密码
+     * @param code 角色代码
      */
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
+    public void setCode(String code) {
+        this.code = code == null ? null : code.trim();
     }
 
     /**
-     * 获取昵称
+     * 获取角色描述
      *
-     * @return nick_name - 昵称
+     * @return description - 角色描述
      */
-    public String getNickName() {
-        return nickName;
+    public String getDescription() {
+        return description;
     }
 
     /**
-     * 设置昵称
+     * 设置角色描述
      *
-     * @param nickName 昵称
+     * @param description 角色描述
      */
-    public void setNickName(String nickName) {
-        this.nickName = nickName == null ? null : nickName.trim();
-    }
-
-    /**
-     * 获取头像
-     *
-     * @return head_picture - 头像
-     */
-    public String getHeadPicture() {
-        return headPicture;
-    }
-
-    /**
-     * 设置头像
-     *
-     * @param headPicture 头像
-     */
-    public void setHeadPicture(String headPicture) {
-        this.headPicture = headPicture == null ? null : headPicture.trim();
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
     }
 
     /**
@@ -208,12 +183,11 @@ public class AdminUser implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        AdminUser other = (AdminUser) that;
+        AdminRole other = (AdminRole) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
-            && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
-            && (this.getNickName() == null ? other.getNickName() == null : this.getNickName().equals(other.getNickName()))
-            && (this.getHeadPicture() == null ? other.getHeadPicture() == null : this.getHeadPicture().equals(other.getHeadPicture()))
+            && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
+            && (this.getCode() == null ? other.getCode() == null : this.getCode().equals(other.getCode()))
+            && (this.getDescription() == null ? other.getDescription() == null : this.getDescription().equals(other.getDescription()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
             && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()));
@@ -224,10 +198,9 @@ public class AdminUser implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getUsername() == null) ? 0 : getUsername().hashCode());
-        result = prime * result + ((getPassword() == null) ? 0 : getPassword().hashCode());
-        result = prime * result + ((getNickName() == null) ? 0 : getNickName().hashCode());
-        result = prime * result + ((getHeadPicture() == null) ? 0 : getHeadPicture().hashCode());
+        result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
+        result = prime * result + ((getCode() == null) ? 0 : getCode().hashCode());
+        result = prime * result + ((getDescription() == null) ? 0 : getDescription().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
@@ -241,10 +214,9 @@ public class AdminUser implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", mobile=").append(username);
-        sb.append(", password=").append(password);
-        sb.append(", nickName=").append(nickName);
-        sb.append(", headPicture=").append(headPicture);
+        sb.append(", name=").append(name);
+        sb.append(", code=").append(code);
+        sb.append(", description=").append(description);
         sb.append(", status=").append(status);
         sb.append(", createTime=").append(createTime);
         sb.append(", updateTime=").append(updateTime);

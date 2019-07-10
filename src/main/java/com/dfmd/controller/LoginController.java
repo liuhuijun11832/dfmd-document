@@ -1,5 +1,7 @@
 package com.dfmd.controller;
 
+import com.dfmd.entity.AdminUser;
+import com.dfmd.service.LoginService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,8 +23,8 @@ public class LoginController {
     @GetMapping("/index")
     public String test(){
         log.info("进入首页");
-        User user = loginService.test();
-        log.info("获得用户名为:{}", user.getName());
+        AdminUser adminUser = loginService.test();
+        log.info("获得用户名为:{}", adminUser.getNickName());
         return "index";
     }
 
