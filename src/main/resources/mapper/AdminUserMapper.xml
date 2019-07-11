@@ -6,10 +6,10 @@
       WARNING - @mbg.generated
     -->
     <result column="id" jdbcType="INTEGER" property="id" />
-    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
-    <result column="head_picture" jdbcType="VARCHAR" property="headPicture" />
+    <result column="head_img" jdbcType="VARCHAR" property="headImg" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
