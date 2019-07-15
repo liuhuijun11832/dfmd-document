@@ -41,8 +41,8 @@ public class DfmdDocumentApplicationTests {
         Page<Task> tasks = taskRuntime.tasks(Pageable.of(0, 10));
         log.info("其他人无法看到该任务:{}", tasks.getTotalItems());
 
-        securityUtil.logInAs("ryandawsonuk");
-        log.info("ryandawsonuk可以看到该任务");
+        securityUtil.logInAs("erdemedeiros");
+        log.info("erdemedeiros");
         tasks = taskRuntime.tasks(Pageable.of(0, 10));
         String avaliabledTaskId = tasks.getContent().get(0).getId();
 

@@ -2,6 +2,8 @@ package com.dfmd.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.activiti.api.task.runtime.events.TaskActivatedEvent;
+import org.activiti.api.task.runtime.events.TaskAssignedEvent;
+import org.activiti.api.task.runtime.events.TaskCompletedEvent;
 import org.activiti.api.task.runtime.events.listener.TaskRuntimeEventListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -50,13 +52,13 @@ public class DemoActivitiConfig {
     }
 
     @Bean
-    public TaskRuntimeEventListener<TaskActivatedEvent> taskAssigneedEventListener(){
-        return t -> log.info("任务分配：{}可以通知给任务处理人{}", t.getEntity().getName(), t.getEntity().getAssignee());
+    public TaskRuntimeEventListener<TaskAssignedEvent> taskAssigneedEventListener(){
+        return t -> log.info("任务分配:{}可以发送通知给任务处理人{}", t.getEntity().getName(), t.getEntity().getAssignee());
     }
 
     @Bean
-    public TaskRuntimeEventListener<TaskActivatedEvent> taskCompletedListener(){
-        return t -> log.info("任务完成:{}可以通知给任务发起人{}", t.getEntity().getName(), t.getEntity().getOwner());
+    public TaskRuntimeEventListener<TaskCompletedEvent> taskCompletedListener(){
+        return t -> log.info("任务完成:{}可以发送通知给任务发起人{}", t.getEntity().getName(), t.getEntity().getOwner());
     }
 
 }
