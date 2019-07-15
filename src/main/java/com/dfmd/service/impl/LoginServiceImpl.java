@@ -43,20 +43,14 @@ public class LoginServiceImpl implements LoginService {
         adminUser1.setUsername("xiaohua");
 
         log.info("创建solr索引:{}", "test");
-        SolrInputDocument solrInputFields = new SolrInputDocument();
-        solrInputFields.addField("id", 1);
-        solrInputFields.addField("username", "xiaoming");
-        solrInputFields.addField("password", "123");
-        solrClient.add(solrInputFields);
-        solrClient.commit();
+        //SolrInputDocument solrInputFields = new SolrInputDocument();
+        //solrInputFields.addField("id", 1);
+        //solrInputFields.addField("username", "xiaoming");
+        //solrInputFields.addField("password", "123");
+        //solrClient.add(solrInputFields);
+        //solrClient.commit();
 
-        log.info("基于实体类创建索引:{}", "adminUser");
-        List<AdminUser> adminUserList = new ArrayList<AdminUser>(2) {{
-            add(adminUser);
-            add(adminUser1);
-        }};
-        solrClient.addBeans(adminUserList);
-        solrClient.commit();
+
 
         //第一种查询方式
         log.info("开始查询:{}", "test");
@@ -69,7 +63,7 @@ public class LoginServiceImpl implements LoginService {
         log.info("查询结果:{}", queryResponse.getResults().toString());
 
         //第二种查询方式
-        int page = 1;
+        int page = 0;
         int rows = 10;
         SolrQuery solrQuery = new SolrQuery();
         solrQuery.setQuery("username:xiaoming");
