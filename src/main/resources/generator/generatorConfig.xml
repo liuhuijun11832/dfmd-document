@@ -32,18 +32,18 @@
         </javaTypeResolver>
         <!-- 生成模型的包名和项目中路径-->
         <javaModelGenerator targetPackage="com.dfmd.entity"
-                            targetProject="src\main\java">
+                            targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
         <!-- 生成映射文件的目录名和项目中路径 -->
         <sqlMapGenerator targetPackage="mapper"
-                         targetProject="src\main\resources\">
+                         targetProject="src/main/resources\">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
         <!-- 生成DAO interface的包名和项目中路径 -->
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="com.dfmd.mapper"   targetProject="src\main\java">
+                             targetPackage="com.dfmd.mapper"   targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
