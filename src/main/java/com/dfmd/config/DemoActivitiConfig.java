@@ -1,7 +1,6 @@
 package com.dfmd.config;
 
 import lombok.extern.slf4j.Slf4j;
-import org.activiti.api.task.runtime.events.TaskActivatedEvent;
 import org.activiti.api.task.runtime.events.TaskAssignedEvent;
 import org.activiti.api.task.runtime.events.TaskCompletedEvent;
 import org.activiti.api.task.runtime.events.listener.TaskRuntimeEventListener;
