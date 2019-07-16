@@ -11,6 +11,7 @@ import org.apache.solr.client.solrj.SolrServerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -41,6 +42,7 @@ public class LoginController {
         return "index";
     }
 
+    @ResponseBody
     @GetMapping("/activiti")
     public void activitiTest() {
         log.info("开始请假测试流程:{}", ActivityKeyEnum.TEST_PROCESS.getKey());
