@@ -3,6 +3,7 @@
 - Spring Boot 2.1.6.RELEASE
 - Activiti 7.1.0.M1
 - Spring Boot Data Solr
+
 该项目可直接clone到本地，目前配置文件中的Solr的服务器版本为8.1.1，详情可访问:[http://www.guitar-coder.cn:8983/solr/#/](http://www.guitar-coder.cn:8983/solr/#/),
 该地址目前可正常访问。项目启动报`Expected mime type application/octet-stream but got text/html.`错可以暂时忽略，因为Solr启动时有检查措施，此时配置的solr.host
 实际上是一个页面，但是正常访问的时候，会直接在配置的solr.host的url后加上/select，/update等链接，此时返回的是Json数据了，具体原因暂时不明，待后期跟踪源码调试一下。
