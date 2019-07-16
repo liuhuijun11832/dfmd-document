@@ -8,6 +8,7 @@
 该地址目前可正常访问。项目启动报`Expected mime type application/octet-stream but got text/html.`错可以暂时忽略，因为Solr启动时有检查措施，此时配置的solr.host
 实际上是一个页面，但是正常访问的时候，会直接在配置的solr.host的url后加上/select，/update等链接，此时返回的是Json数据了，具体原因暂时不明，待后期跟踪源码调试一下。
 activite模拟了一个请假的流程，具体如图：
+
 ![https://github.com/liuhuijun11832/dfmd-document/blob/master/src/main/resources/processes/leave-process.bpmn.png](https://github.com/liuhuijun11832/dfmd-document/blob/master/src/main/resources/processes/leave-process.bpmn.png)
 ## 测试
 本地启动成功以后，可以访问本地[http://localhost:8080/index](http://localhost:8080/index)以及[http://localhost:8080/activiti](http://localhost:8080/activiti)查看控制台输出结果。
