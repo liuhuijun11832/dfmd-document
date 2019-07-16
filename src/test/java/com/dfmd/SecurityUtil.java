@@ -2,6 +2,7 @@ package com.dfmd;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.TestComponent;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -18,7 +19,7 @@ import java.util.Collection;
  * @Date: 2019-07-15 18:02
  */
 @Slf4j
-@Component
+@TestComponent
 public class SecurityUtil {
 
     @Autowired

@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.activiti.api.task.runtime.events.TaskAssignedEvent;
 import org.activiti.api.task.runtime.events.TaskCompletedEvent;
 import org.activiti.api.task.runtime.events.listener.TaskRuntimeEventListener;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,7 +24,7 @@ import java.util.stream.Collectors;
  * @Date: 2019-07-15 17:32
  */
 @Slf4j
-@Configuration
+@TestConfiguration
 public class DemoActivitiConfig {
 
 
