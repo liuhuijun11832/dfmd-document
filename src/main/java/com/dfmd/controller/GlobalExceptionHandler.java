@@ -45,7 +45,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         }
         if (ex instanceof MethodArgumentTypeMismatchException) {
             MethodArgumentTypeMismatchException exception = (MethodArgumentTypeMismatchException) ex;
-            return new org.springframework.http.ResponseEntity(new ResponseEntity(status.value(), "参数转换失败"), status);
+            return new org.springframework.http.ResponseEntity(new ResponseEntity(status.value(), exception.getLocalizedMessage()), status);
         }
         return new org.springframework.http.ResponseEntity(new ResponseEntity(status.value(), ex.getLocalizedMessage()), status);
     }
